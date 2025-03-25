@@ -4,10 +4,10 @@ cd $PSScriptRoot
 
 Do {
 	$path = read-host -prompt 'File name'
-		$valid = Test-Path -Path $path -PathType Leaf
-		if (!$valid){
-			echo "Not a valid path"
-		}
+	$valid = Test-Path -Path $path -PathType Leaf
+	if (!$valid){
+		echo "Not a valid path"
+	}
 }
 Until($valid)
 
