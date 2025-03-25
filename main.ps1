@@ -34,14 +34,17 @@ $in_type = $fields[0]
 $output=@()
 
 Try {
-	$servers = get-content -path ".\servers.txt"
-	$servers_arr = $servers -split " "
 	foreach ($data in $input_arr) {
 		foreach ($server in $servers_arr) {
-			$output += Get-ADUser `
+			$user = Get-ADUser `
 				-Filter "$in_type -eq '$data'" `
 				-server $server `
 				-Properties $fields
+
+			if ($user) {
+				$output += $user
+				break
+			}
 		}
 	}
 }
