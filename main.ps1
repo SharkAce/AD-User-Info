@@ -55,9 +55,9 @@ Catch {
 }
 
 Try {
-	$output | select $fields | export-csv -notypeinformation -delimiter ';' -path $out_path
+	$output | select $fields | export-csv -notypeinformation -path $out_path
 	$content = get-content -path $out_path
-	$content[0] = '"{0}"' -f ($unaliasedFields -join '";"')
+	$content[0] = '"{0}"' -f ($unaliasedFields -join '","')
 	$content | set-content -path $out_path
 }
 
