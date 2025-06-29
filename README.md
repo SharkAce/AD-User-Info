@@ -1,12 +1,10 @@
 # ActiveDirectory User Info Script
 
-## Preface
-
-### Description
+## Description
 
 This script retrieves information about Active Directory users based on input provided in a CSV file. It allows you to specify the properties you want to extract for every user and generates an output file with the requested details.
 
-### Main Use Case
+## Main Use Case
 
 Once the users information is collected, the output CSV file can be used with the Mail Merge feature in Word to send customized emails to every user listed in the CSV.
 
